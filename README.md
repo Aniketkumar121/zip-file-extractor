@@ -58,7 +58,7 @@ pip install -r requirements.txt
 4. Hosted on Render
 
 ```bash
-render.com
+https://zip-file-extractor.onrender.com
 ```
 
 ---
