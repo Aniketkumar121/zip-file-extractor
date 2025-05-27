@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Project Zip File Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <nav>
+        Project Zip File Extractor
+    </nav>
+
+    <main>
+        <h1>Upload your ZIP file</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="flash">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('index') }}" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="zip_file">Choose ZIP File</label>
+            <input type="file" id="zip_file" name="zip_file" accept=".zip" required />
+            <div id="file-name"></div>
+            <button type="submit" disabled>Extract Zip Content</button>
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2025 Your Name or Company
+    </footer>
+
+    <script>
+        const fileInput = document.getElementById('zip_file');
+        const fileNameDisplay = document.getElementById('file-name');
+        const submitButton = document.querySelector('button[type="submit"]');
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
+                submitButton.disabled = false;
+            } else {
+                fileNameDisplay.textContent = '';
+                submitButton.disabled = true;
+            }
+        });
+    </script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Project Zip File Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <nav>
+        Project Zip File Extractor
+    </nav>
+
+    <main>
+        <h1>Upload your ZIP file</h1>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="flash">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('index') }}" method="post" enctype="multipart/form-data" id="upload-form">
+            <label for="zip_file">Choose ZIP File</label>
+            <input type="file" id="zip_file" name="zip_file" accept=".zip" required />
+            <div id="file-name"></div>
+
+            <button type="submit" name="extract_type" value="normal" disabled>Normal Extract</button>
+            <button type="submit" name="extract_type" value="clean" disabled>Extract without Comments</button>
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2025 Your Name or Company
+    </footer>
+
+    <script>
+        const fileInput = document.getElementById('zip_file');
+        const fileNameDisplay = document.getElementById('file-name');
+        const buttons = document.querySelectorAll('button[type="submit"]');
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
+                buttons.forEach(btn => btn.disabled = false);
+            } else {
+                fileNameDisplay.textContent = '';
+                buttons.forEach(btn => btn.disabled = true);
+            }
+        });
+    </script>
+
+</body>
+</html>
