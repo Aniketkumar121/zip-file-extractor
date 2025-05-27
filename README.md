@@ -18,7 +18,7 @@ A simple and easy-to-use Flask web application that extracts and consolidates co
 
 ## Screenshots
 
-![Upload Page](docs/upload_page.png)  
+![Upload Page](zip-file-extractor-UI.png)  
 *Clean UI with two extraction modes.*
 
 ---
